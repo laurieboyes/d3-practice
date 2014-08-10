@@ -37,3 +37,13 @@
     margin: 1px;
     color: white;
 }
+
+#chart2 rect {
+    fill: steelblue;
+}
+
+#chart2 text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end;
+}
