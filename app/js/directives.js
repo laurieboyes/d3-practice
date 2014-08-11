@@ -3,29 +3,31 @@
 /* Directives */
 
 
-angular.module('myApp.directives', [])
+angular.module('myApp.directives', ['d3'])
 
-    .directive('ngChart1', [function () {
+    .directive('ngChart1', ['d3Service', function (d3Service) {
         return function (scope, elm, attrs) {
+            
+            d3Service.d3().then(function(d3) {
+            
+                var data = [4, 8, 15, 16, 23, 42];
 
-            var data = [4, 8, 15, 16, 23, 42];
+                var scale = d3.scale.linear()
+                    .domain([0, d3.max(data)])
+                    .range([0, 420]);
 
-            var scale = d3.scale.linear()
-                .domain([0, d3.max(data)])
-                .range([0, 420]);
+                d3.select("#chart1")
+                    .selectAll("div")
+                    .data(data)
+                    .enter().append("div")
+                    .style("width", function (d) {
+                        return scale(d) + "px";
+                    })
+                    .text(function (d) {
+                        return d;
+                    });
 
-            d3.select("#chart1")
-                .selectAll("div")
-                .data(data)
-                .enter().append("div")
-                .style("width", function (d) {
-                    return scale(d) + "px";
-                })
-                .text(function (d) {
-                    return d;
-                });
-
-
+            });
         };
     }])
 
