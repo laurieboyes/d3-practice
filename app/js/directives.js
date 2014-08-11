@@ -46,7 +46,6 @@ angular.module('myApp.directives', [])
                 .domain([0, d3.max(data)])
                 .range([0, 420]);
 
-//            So this must be a reference to some sort of collection of the bars?
             var bar = chart.selectAll("g")
                 .data(data)
                 .enter().append("g")
@@ -56,14 +55,14 @@ angular.module('myApp.directives', [])
             
             bar.append("rect")
                 .attr("width", scale)
-                .attr("height", barHeight - 1); // So this must be relative to the parent g?
+                .attr("height", barHeight - 1);
             
             bar.append("text")
                 .attr("x", function(d) {
                    return scale(d) - 3; 
                 })
                 .attr("y", barHeight / 2)
-                .attr("dy", ".35em") //todo what the hell is dy?
+                .attr("dy", ".35em") // this vertically aligns text
                 .text(function(d) {return d;});
 
         };
