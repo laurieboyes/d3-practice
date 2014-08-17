@@ -10,7 +10,8 @@ angular.module('myApp', [
   'myApp.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/chart1.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/view2', {templateUrl: 'partials/chart2.html', controller: 'MyCtrl2'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.when('/chart1', {templateUrl: 'partials/chart1.html'});
+  $routeProvider.when('/chart2', {templateUrl: 'partials/chart2.html'});
+  $routeProvider.when('/chart3', {templateUrl: 'partials/chart3.html'});
+  $routeProvider.otherwise({redirectTo: '/chart1'});
 }]);

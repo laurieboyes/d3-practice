@@ -47,3 +47,13 @@
     font: 10px sans-serif;
     text-anchor: end;
 }
+
+#chart3 rect {
+    fill: steelblue;
+}
+
+#chart3 text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end;
+}
