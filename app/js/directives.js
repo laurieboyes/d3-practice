@@ -64,7 +64,7 @@ angular.module('myApp.directives', ['d3'])
 
                         bar.append("rect")
                             .attr("width", function (d) {
-                                scale(d.value);
+                                return scale(d.value);
                             })
                             .attr("height", barHeight - 1);
 
